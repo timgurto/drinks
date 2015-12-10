@@ -1,0 +1,109 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{fbb}
+\usepackage[landscape,left=1in,right=1in,top=0.7in,bottom=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+\usepackage{multicol}
+
+\titleformat{\section}{\centering\bf\LARGE}{}{0em}{}
+\titleformat{\subsection}{\centering\sc\Large}{}{0em}{}
+
+\begin{document}
+\pagenumbering{gobble}
+\setlength{\columnseprule}{0.4pt}
+\setlength{\columnsep}{5em}
+
+\newrobustcmd{\decoLeft}[2]{\includegraphics[height=#2]{#1}}
+\newrobustcmd{\decoRight}[2]{\reflectbox{\includegraphics[height=#2]{#1}}}
+
+\newcommand{\drink}[3]{%
+
+\noindent
+\textbf{#1}\hspace{0.7em}\emph{#2}\hfill{}#3
+}
+
+\newcommand{\ssec}[3]{%
+%\vspace{-0.5em}
+\subsection{\decoLeft{#2}{#3}\hspace{1em}#1\hspace{1em}\decoRight{#2}{#3}}
+}
+
+\section{Ap\'eritifs}
+\begin{multicols}{2}
+
+\ssec{Beers}{deco-beer}{1.5em}
+\drink{Peroni `Nastro Azzurro'}{premium lager}{Italy}
+\drink{Heineken}{pale lager}{The Netherlands}
+
+\ssec{Mixers}{deco-mixer}{1em}
+\drink{Jim Beam}{bourbon whiskey}{Kentucky, USA}
+\drink{Jack Daniel's Old No.\,\oldstylenums{7}}{whiskey}{Tennessee, USA}
+\drink{Johnnie Walker `Red Label'}{blended whisky}{Scotland}
+\drink{Bacardi `Superior'}{rum}{Cuba}
+\drink{Grunter's Wipeout}{coconut rum}{Victoria, Australia}
+\drink{Gordon's}{gin}{England}
+\drink{Stolichnaya}{vodka}{Latvia}
+\drink{Ruskov}{vodka}{France}
+\drink{Jose Cuervo `Especial'}{tequila}{Mexico}
+\drink{Cinzano}{dry vermouth}{Italy}
+
+\ssec{Spirits}{deco-spirit}{1.5em}
+%\drink{Glen Grant `The Majors Reserve'}{single-malt whisky}{Scotland}
+\drink{Glen Grant `\oldstylenums{10} years'}{single-malt whisky}{Scotland}
+%\drink{The Glenlivet}{single-malt whisky}{Scotland}
+\drink{Johnnie Walker `Black Label'}{blended whisky}{Scotland}
+\drink{Fireball}{cinnamon whisky}{Canada}
+\drink{Tekirda\u{g} raki}{grape spirit flavored with anise}{Turkey}
+\drink{Gusano Rojo}{mezcal}{Mexico}
+\drink{Baileys}{Irish cream}{Ireland}
+
+\ssec{Cocktails}{deco-cocktail}{1.5em}
+%\drink{Martini}{3 Gordon's : 1 Cinzano}{63 proof}
+%\drink{Margarita}{3 Jose Cuervo : 1 Cointreau : 2 lime juice}{51 proof}
+%\drink{Tequila Sunrise}{4 Jose Cuervo : 1 grenadine : 6 orange juice}{28 proof}
+%\drink{Black Russian}{5 Stolichnaya : 2 Tia Maria}{66 proof}
+%\drink{Butterball}{2 Baileys : 1 butterscotch schnapps}{36 proof}
+
+%\drink{Martini}{gin, vermouth}{63 proof}
+%\drink{Margarita}{tequila, lime juice, Cointreau}{51 proof}
+%\drink{Tequila Sunrise}{orange juice, tequila, grenadine}{28 proof}
+%\drink{Black Russian}{vodka, Tia Maria}{66 proof}
+%\drink{Butterball}{Baileys, butterscotch schnapps}{36 proof}
+
+\drink{Martini}{\oldstylenums{3} gin : vermouth}{\oldstylenums{32}\% alc./vol.}
+\drink{Margarita}{\oldstylenums{3} tequila : Cointreau : \oldstylenums{2} lime juice}{\oldstylenums{26}\% alc./vol.}
+\drink{Tequila Sunrise}{\oldstylenums{4} tequila : grenadine : \oldstylenums{6} orange juice}{\oldstylenums{14}\% alc./vol.}
+\drink{Black Russian}{\oldstylenums{5} vodka : \oldstylenums{2} Tia Maria}{\oldstylenums{33}\% alc./vol.}
+\drink{Butterball}{butterscotch schnapps : \oldstylenums{2} Baileys}{\oldstylenums{18}\% alc./vol.}
+\end{multicols}
+
+\vspace{2em}
+\section{Digestifs}
+\begin{multicols}{2}
+\ssec{Fortified and distilled wines}{deco-wine}{1.5em}
+\drink{McWilliam's `Hanwood Estate'}{tawny}{NSW, Australia}
+\drink{McWilliam's `Hanwood Grabd Tawny'}{tawny}{NSW, Australia}
+\drink{Penfolds `Club'}{tawny}{SA, Australia}
+\drink{Sainte Louise}{Napoleon brandy}{France}
+\drink{Grand Marnier}{cognac flavored with orange}{France}
+
+\ssec{Liqueurs}{deco-liqueur}{1.5em}
+\drink{Tia Maria}{coffee liqueur}{Italy}
+\drink{Kahl\'ua}{coffee liqueur}{New York, USA}
+\drink{Kahl\'ua `Cinnamon Spice}{coffee liqueur}{Mexico}
+\drink{Frangelico}{hazelnut liqueur}{Italy}
+\drink{Galliano}{vanilla liqueur}{Italy}
+\drink{Galliano Black}{sambucca}{Italy}
+\end{multicols}
+
+
+\end{document}
+
+
+% beer 179
+% spirits 174
+% mixers 182?
+% cocktails 90
+% wines 178
+% liqueurs 177
