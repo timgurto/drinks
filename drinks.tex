@@ -1,7 +1,7 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage[T1]{fontenc}
 \usepackage{fbb}
-\usepackage[landscape,left=1in,right=1in,top=0.7in,bottom=1in]{geometry}
+\usepackage[landscape,left=1in,right=1in,top=0.5in,bottom=0.7in]{geometry}
 \usepackage{titlesec}
 \usepackage{graphicx}
 \usepackage{etoolbox}
@@ -9,6 +9,7 @@
 
 \titleformat{\section}{\centering\bf\LARGE}{}{0em}{}
 \titleformat{\subsection}{\centering\sc\Large}{}{0em}{}
+\titleformat{\subsubsection}{\centering\sc\large}{}{0em}{}
 
 \begin{document}
 \pagenumbering{gobble}
@@ -25,18 +26,43 @@
 }
 
 \newcommand{\ssec}[3]{%
-%\vspace{-0.5em}
 \subsection{\decoLeft{#2}{#3}\hspace{1em}#1\hspace{1em}\decoRight{#2}{#3}}
 }
 
 \section{Ap\'eritifs}
 \begin{multicols}{2}
 
+
+\ssec{Top-shelf spirits}{deco-spirit-top}{1.2em}
+\drink{Glen Grant `\oldstylenums{10} years'}{single-malt whisky}{Scotland}
+\drink{Johnnie Walker `Black Label'}{blended whisky}{Scotland}
+\drink{Fireball}{cinnamon whisky}{Canada}
+\drink{Tekirda\u{g} raki}{grape spirit flavored with anise}{Turkey}
+\drink{Gusano Rojo}{mezcal}{Mexico}
+\drink{Baileys}{Irish cream}{Ireland}
+
+
 \ssec{Beers}{deco-beer}{1.5em}
 \drink{Peroni `Nastro Azzurro'}{premium lager}{Italy}
 \drink{Heineken}{pale lager}{The Netherlands}
 
-\ssec{Mixers}{deco-mixer}{1em}
+
+\ssec{Mixers and soft drinks}{deco-mixer}{1em}
+\setlength{\columnseprule}{0pt}
+\setlength{\columnsep}{0em}
+\begin{multicols}{3}
+\drink{Sparkling water}{}{}
+\drink{Tonic water}{}{}
+\drink{Pepsi Max}{}{}
+\drink{Orange Juice}{}{}
+\drink{Milk}{}{}
+\drink{Egg Nog}{}{}
+\end{multicols}
+\setlength{\columnseprule}{0.4pt}
+\setlength{\columnsep}{5em}
+
+
+\ssec{Pleb spirits}{deco-spirit-bottom}{0.8em}
 \drink{Jim Beam}{bourbon whiskey}{Kentucky, USA}
 \drink{Jack Daniel's Old No.\,\oldstylenums{7}}{whiskey}{Tennessee, USA}
 \drink{Johnnie Walker `Red Label'}{blended whisky}{Scotland}
@@ -47,38 +73,19 @@
 \drink{Ruskov}{vodka}{France}
 \drink{Jose Cuervo `Especial'}{tequila}{Mexico}
 \drink{Cinzano}{dry vermouth}{Italy}
+\drink{Angostura Bitters}{bitters}{Trinidad \& Tobago}
 
-\ssec{Spirits}{deco-spirit}{1.5em}
-%\drink{Glen Grant `The Majors Reserve'}{single-malt whisky}{Scotland}
-\drink{Glen Grant `\oldstylenums{10} years'}{single-malt whisky}{Scotland}
-%\drink{The Glenlivet}{single-malt whisky}{Scotland}
-\drink{Johnnie Walker `Black Label'}{blended whisky}{Scotland}
-\drink{Fireball}{cinnamon whisky}{Canada}
-\drink{Tekirda\u{g} raki}{grape spirit flavored with anise}{Turkey}
-\drink{Gusano Rojo}{mezcal}{Mexico}
-\drink{Baileys}{Irish cream}{Ireland}
 
 \ssec{Cocktails}{deco-cocktail}{1.5em}
-%\drink{Martini}{3 Gordon's : 1 Cinzano}{63 proof}
-%\drink{Margarita}{3 Jose Cuervo : 1 Cointreau : 2 lime juice}{51 proof}
-%\drink{Tequila Sunrise}{4 Jose Cuervo : 1 grenadine : 6 orange juice}{28 proof}
-%\drink{Black Russian}{5 Stolichnaya : 2 Tia Maria}{66 proof}
-%\drink{Butterball}{2 Baileys : 1 butterscotch schnapps}{36 proof}
-
-%\drink{Martini}{gin, vermouth}{63 proof}
-%\drink{Margarita}{tequila, lime juice, Cointreau}{51 proof}
-%\drink{Tequila Sunrise}{orange juice, tequila, grenadine}{28 proof}
-%\drink{Black Russian}{vodka, Tia Maria}{66 proof}
-%\drink{Butterball}{Baileys, butterscotch schnapps}{36 proof}
-
 \drink{Martini}{\oldstylenums{3} gin : vermouth}{\oldstylenums{32}\% alc./vol.}
 \drink{Margarita}{\oldstylenums{3} tequila : Cointreau : \oldstylenums{2} lime juice}{\oldstylenums{26}\% alc./vol.}
 \drink{Tequila Sunrise}{\oldstylenums{4} tequila : grenadine : \oldstylenums{6} orange juice}{\oldstylenums{14}\% alc./vol.}
 \drink{Black Russian}{\oldstylenums{5} vodka : \oldstylenums{2} Tia Maria}{\oldstylenums{33}\% alc./vol.}
 \drink{Butterball}{butterscotch schnapps : \oldstylenums{2} Baileys}{\oldstylenums{18}\% alc./vol.}
+
+
 \end{multicols}
 
-\vspace{2em}
 \section{Digestifs}
 \begin{multicols}{2}
 \ssec{Fortified and distilled wines}{deco-wine}{1.5em}
@@ -99,11 +106,3 @@
 
 
 \end{document}
-
-
-% beer 179
-% spirits 174
-% mixers 182?
-% cocktails 90
-% wines 178
-% liqueurs 177
