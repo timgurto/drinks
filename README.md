@@ -1,7 +1,9 @@
 # Drinks menu
 
+The compiled document is at [drinks.pdf](drinks.pdf).
+
 ## 1. Generate graphics
-For each .tex file named `deco-*.tex`, compile it with XeLaTeX.  This should generate a .pdf file containing the graphic.  The picture that each `psvectorian` code can be seen in [psvectorian.pdf](), copied in this repository.
+For each .tex file named `deco-*.tex`, compile it with XeLaTeX.  This should generate a .pdf file containing the graphic.  The picture that each `psvectorian` code can be seen in [psvectorian.pdf](psvectorian.pdf), copied in this repository.
 
 For example,
 ```tex
