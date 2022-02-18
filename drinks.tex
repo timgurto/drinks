@@ -1,7 +1,7 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage[T1]{fontenc}
 \usepackage{fbb}
-\usepackage[landscape,left=1in,right=1in,top=0.4in,bottom=0.5in]{geometry}
+\usepackage[landscape,left=1in,right=1in,top=0.7in,bottom=1in]{geometry}
 \usepackage{titlesec}
 \usepackage{graphicx}
 \usepackage{etoolbox}
@@ -11,11 +11,15 @@
 \titleformat{\section}{\centering\bf\LARGE}{}{0em}{}
 \titleformat{\subsection}{\centering\sc\Large}{}{0em}{}
 \titleformat{\subsubsection}{\centering\sc\large}{}{0em}{}
+\titlespacing{\section}{0pt}{2.5em}{0.8em}
+\titlespacing{\subsubsection}{0pt}{1.5em plus 0.5em minus 0.5em}{0.3em plus 0.2em minus 0.2em}
 
 \begin{document}
 \pagenumbering{gobble}
-\setlength{\columnseprule}{0.4pt}
+
+%\setlength{\columnseprule}{0.4pt}
 \setlength{\columnsep}{5em}
+\setlength{\multicolsep}{0pt}
 
 \newrobustcmd{\decoLeft}[2]{\includegraphics[height=#2]{#1}}
 \newrobustcmd{\decoRight}[2]{\reflectbox{\includegraphics[height=#2]{#1}}}
@@ -23,116 +27,168 @@
 \newcommand{\drink}[3]{%
 
 \noindent
-\textbf{#1}\hspace{0.7em}\emph{#2}\hfill{}#3
+\textbf{#1}
+    \ifx&#2&%
+    \else
+      \hspace{0.7em}\emph{#2}
+    \fi
+    \ifx&#3&%
+    \else
+      \hfill{}#3
+    \fi
 }
 
 \newcommand{\ssec}[3]{%
 \subsection{\decoLeft{#2}{#3}\hspace{1em}#1\hspace{1em}\decoRight{#2}{#3}}
+\vspace{-0.8em}
+\hrule
+\vspace{0.5em}
 }
 
-\section{Ap\'eritifs}\vspace{-1em}
+
+\section{Ap\'eritifs}
 \begin{multicols}{2}
 
 
-\ssec{Top-Shelf Spirits}{deco-spirit-top}{1.2em}
-%\drink{Glen Grant `\oldstylenums{10} years'}{single malt whisky}{Scotland}
-\drink{Chivas Regal `Gold Signature'}{whisky, blended, \oldstylenums{18} y.o.}{Scotland}
-\drink{Aberlour}{whisky, single malt, \oldstylenums{12} y.o.}{Scotland}
-\drink{The Dalmore}{whisky, single malt, \oldstylenums{12} y.o.}{Scotland}
-\drink{Glenfiddich}{whisky, single malt, \oldstylenums{12} y.o.}{Scotland}
-\drink{Johnnie Walker `Black Label'}{whisky, blended, \oldstylenums{12} y.o.}{Scotland}
-\drink{The Glenlivet `Founder's Reserve'}{whisky, single malt}{Scotland}
-\drink{Ballantine's}{whisky, blended}{Scotland}
-%\drink{Lagavulin}{whisky, single malt, \oldstylenums{16} y.o.}{Islay, Scotland}
-\drink{Bunnahabhain}{whisky, single malt, \oldstylenums{12} y.o.}{Islay, Scotland}
-\drink{Laphroaig}{whisky, single malt, \oldstylenums{10} y.o.}{Islay, Scotland}
-\drink{Laphroaig `Quarter Cask'}{whisky, single malt}{Islay, Scotland}
-\drink{Tullamore Dew}{whisky, \oldstylenums{12} y.o.}{Ireland}
-\drink{Jameson}{whisky}{Ireland}
-\drink{Iwai `Tradition'}{whisky}{Japan}
-\drink{Fireball}{cinnamon whisky}{Canada}
-\drink{Tekirda\u{g} raki}{grape spirit flavored with anise}{Turkey}
-\drink{Gusano Rojo}{mezcal}{Mexico}
-\drink{Baileys}{Irish cream}{Ireland}
-%\drink{Baileys `Chocolate Cherry'}{Irish cream}{Ireland}
 
 
-\ssec{Mixers \& Soft Drinks}{deco-mixer}{1em}
-\setlength{\columnseprule}{0pt}
+
+
+
+%\ssec{Beers}{deco-beer}{1.5em}
+%\drink{Asahi `Super Dry'}{lager}{Japan}
+%\drink{Heineken}{pale lager}{The Netherlands}
+%\drink{Peroni `Nastro Azzurro'}{lager}{Italy}
+%\drink{Stella Artois}{pilsner}{Belgium}
+
+
+%\setlength{\columnseprule}{0pt}
+\setlength{\columnsep}{-2em}
+\ssec{Rail Drinks}{deco-spirit-bottom}{0.8em}
+\begin{multicols}{3}
+\drink{Beer}{}{}
+\drink{Red wine}{}{}
+\drink{Vodka}{}{}
+\drink{Tequila}{}{}
+\drink{Gin}{}{}
+\drink{Jim Beam}{}{}
+\drink{Jack Daniels}{}{}
+\drink{Canadian Club}{}{}
+\drink{Aromatic bitters}{}{}
+\drink{Peach Schnapps}{}{}
+\drink{Butterscotch Schnapps}{}{}
+\end{multicols}
+%\setlength{\columnseprule}{0.4pt}
+\setlength{\columnsep}{5em}
+
+
+%\setlength{\columnseprule}{0pt}
 \setlength{\columnsep}{0em}
+\ssec{Mixers \& Soft Drinks}{deco-mixer}{1em}
 \begin{multicols}{4}
+\drink{Cola}{}{}
 \drink{Soda water}{}{}
-%\drink{Tonic}{}{}
-\drink{Pepsi Max}{}{}
+\drink{Tonic}{}{}
 \drink{Dry Ginger}{}{}
 \drink{Red Bull}{}{}
 \drink{Orange Juice}{}{}
 \drink{Milk}{}{}
-\drink{Egg Nog}{}{}
 \end{multicols}
-\setlength{\columnseprule}{0.4pt}
+%\setlength{\columnseprule}{0.4pt}
 \setlength{\columnsep}{5em}
 
 
-\ssec{Pleb Spirits}{deco-spirit-bottom}{0.8em}
-\drink{Jim Beam}{bourbon whisky}{Kentucky}
-\drink{Jack Daniel's Old No.\,\oldstylenums{7}}{bourbon whisky}{Tennessee}
-\drink{Johnnie Walker `Red Label'}{blended whisky}{Scotland}
-\drink{Bacardi `Superior'}{rum}{Cuba}
-\drink{Captain Morgan}{spiced rum}{Puerto Rico}
-\drink{Grunter's Wipeout}{coconut rum}{Victoria}
-\drink{Gordon's}{gin}{England}
-%\drink{Absolut}{vodka}{Sweden}
-\drink{Ruskov}{vodka}{France}
-\drink{Stolichnaya}{vodka}{Latvia}
-\drink{Jose Cuervo `Especial'}{tequila}{Mexico}
-\drink{Cinzano}{dry vermouth}{Italy}
-\drink{Angostura Bitters}{bitters}{Trinidad \& Tobago}
-\drink{De Kuyper}{peach schnapps}{The Netherlands}
-\drink{Creative}{butterscotch schnapps}{Victoria}
-
-
-\ssec{Beers}{deco-beer}{1.5em}
-\drink{Peroni `Nastro Azzurro'}{lager}{Italy}
-\drink{Asahi `Super Dry'}{lager}{Japan}
-\drink{Heineken}{pale lager}{The Netherlands}
-%\drink{Stella Artois}{pilsner}{Belgium}
-
-
-%\ssec{Cocktails}{deco-cocktail}{1.5em}
-%\drink{Mojito}{\oldstylenums{4} rum : \oldstylenums{3} lime juice : sugar; fresh mint, soda}{\oldstylenums{14}\% alc./vol.}
-%\drink{Martini}{\oldstylenums{3} gin : vermouth}{\oldstylenums{32}\% alc./vol.}
-%\drink{Margarita}{\oldstylenums{3} tequila : Cointreau : \oldstylenums{2} lime juice}{\oldstylenums{26}\% alc./vol.}
-%\drink{Tequila Sunrise}{\oldstylenums{2} tequila : \sfrac{1}{2} grenadine : \oldstylenums{3} orange juice}{\oldstylenums{14}\% alc./vol.}
+\ssec{Cocktails}{deco-cocktail}{1.5em}
+%\drink{Mojito}{rum, lime juice, sugar, fresh mint, soda}{}
+\drink{Bloody Mary}{vodka, Worcestershire, Tabasco, lemon juice, celery salt,\\ \hphantom{mm}pepper, tomato juice}{}
+%\drink{J\"ager Bomb}{J\"agermeister, Red Bull}{}
+\drink{Margarita}{tequila, Cointreau, lime juice}{}
+\drink{Martini}{gin, dry vermouth}{}
+\drink{Tequila Sunrise}{tequila, grenadine, orange juice}{}
 %\drink{Black Russian}{\oldstylenums{5} vodka : \oldstylenums{2} Tia Maria}{\oldstylenums{33}\% alc./vol.}
 %\drink{Butterball}{butterscotch schnapps : \oldstylenums{2} Baileys}{\oldstylenums{18}\% alc./vol.}
-%\drink{The `Tim Andrews'}{bourbon : pickle brine (separate)}{\oldstylenums{20}\% alc./vol.}
+\drink{The `Tim Andrews'}{bourbon, pickle brine (separate shots)}{}
+
+
+
+
+
+
+\ssec{Whiskies}{deco-beer}{1.2em}
+%\setlength{\columnseprule}{0pt}
+\setlength{\columnsep}{0pt}
+%\vspace{-1em}
+\begin{multicols}{2}
+
+\subsubsection{Islay Scotch}
+\drink{Laphroaig}{\oldstylenums{10} y.o.}{}
+\drink{Laphroaig `Quarter Cask'}{}{}
+\drink{Bunnahabhain}{\oldstylenums{12} y.o.}{}
+
+\subsubsection{Orkney Scotch}
+\drink{Highland Park}{\oldstylenums{12} y.o.}{}
+
+\subsubsection{Speyside Scotch}
+\drink{Aberlour}{\oldstylenums{12} y.o.}{}
+\drink{Chivas Regal}{blended, \oldstylenums{12} y.o.}{}
+\drink{Chivas Regal `Gold\\\hphantom{mm}Signature'}{blended, \oldstylenums{18} y.o.}{}
+\drink{Glenfiddich}{\oldstylenums{12} y.o.}{}
+\drink{Glenlivet `Founder's Reserve'}{}{}
+
+\end{multicols}
+%\vspace{-1em}
+%\setlength{\columnseprule}{0.4pt}
+\setlength{\columnsep}{5em}
+
+\subsubsection{Other Whisky}
+\drink{Jameson}{}{Ireland}
+\drink{Tullamore \textsc{dew}}{\oldstylenums{12} y.o.}{Ireland}
+\drink{Iwai `Tradition'}{}{Japan}
+\drink{Jefferson's}{Bourbon}{Kentucky, USA}
+\drink{Johnnie Walker `Black Label'}{blended, \oldstylenums{12} y.o.}{Scotland}
+
+\vspace{3em}
+\vphantom{.}
+
 
 
 \end{multicols}
-
-\section{Digestifs}\vspace{-1em}
+%\vspace{1em}
+\section{Digestifs}
+%\setlength{\columnseprule}{0.4pt}
+\setlength{\columnsep}{5em}
 \begin{multicols}{2}
 \ssec{Fortified \& Distilled Wines}{deco-wine}{1.2em}
-%\drink{Galway Pipe `Grand Tawny'}{port, 12 y.o.}{South Australia}
-\drink{Hanwood `Grand Tawny'}{port, 10 y.o.}{New South Wales}
-\drink{Penfolds `Father'}{port, 10 y.o.}{South Australia}
-%\drink{Hanwood `Estate'}{port}{New South Wales}
-%\drink{Penfolds `Club'}{port}{South Australia}
-%\drink{Penfolds `Club Reserve'}{port}{South Australia}
-%\drink{De Valcourt}{Napoleon brandy}{France}
-\drink{Napol\'eon}{brandy}{France}
-\drink{Grand Marnier}{cognac flavored with orange}{France}
-%\drink{Wargaming 2015}{blackberry mead}{NSW, Australia}
+\setlength{\columnsep}{0em}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+\drink{Port}{}{}
+\drink{Brandy}{}{}
+\drink{Grand Marnier}{orange cognac}{}
+\drink{Dry vermouth}{}{}
+\drink{Marsala}{}{}
+\end{multicols}
+%\setlength{\columnseprule}{0.4pt}
+\setlength{\columnsep}{5em}
+\vspace*{\fill}
+
 
 \ssec{Liqueurs}{deco-liqueur}{1.2em}
-\drink{Tia Maria}{coffee liqueur}{Italy}
-\drink{Kahl\'ua}{coffee liqueur}{Mexico}
+%\setlength{\columnseprule}{0pt}
+%\setlength{\columnsep}{0em}
+\begin{multicols}{2}
+\drink{Tia Maria}{coffee}{}
+\drink{Kahl\'ua}{coffee}{}
 %\drink{Kahl\'ua `Cinnamon Spice'}{coffee liqueur}{Mexico}
-\drink{Frangelico}{hazelnut liqueur}{Italy}
-\drink{Disaronno}{amaretto}{Italy}
-\drink{Galliano}{vanilla liqueur}{Italy}
-\drink{Galliano Black}{sambucca}{Italy}
+\drink{Frangelico}{hazelnut}{}
+\drink{Disaronno}{almond}{}
+\drink{Fireball}{cinammon}{}
+\drink{J\"agermeister}{herbal}{}
+\drink{Galliano}{vanilla liqueur}{}
+\drink{Galliano Black}{sambucca}{}
+\drink{Galliano White}{sambucca}{}
+\end{multicols}
+
 \end{multicols}
 
 
